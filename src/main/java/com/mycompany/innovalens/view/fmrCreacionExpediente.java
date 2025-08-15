@@ -72,6 +72,7 @@ public class fmrCreacionExpediente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -89,6 +90,7 @@ public class fmrCreacionExpediente extends javax.swing.JFrame {
 
         txtHistorial.setBackground(new java.awt.Color(204, 255, 255));
 
+        btnCancelar.setBackground(new java.awt.Color(88, 164, 219));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +98,7 @@ public class fmrCreacionExpediente extends javax.swing.JFrame {
             }
         });
 
+        btnGuardar.setBackground(new java.awt.Color(88, 164, 219));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

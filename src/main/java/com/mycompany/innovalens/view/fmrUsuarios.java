@@ -59,19 +59,25 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        jButton1.setBackground(new java.awt.Color(88, 164, 219));
         jButton1.setText("Menu Principal");
+        jButton1.setMaximumSize(new java.awt.Dimension(76, 27));
+        jButton1.setMinimumSize(new java.awt.Dimension(76, 27));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setText("Gestion de Usuarios");
 
@@ -86,22 +92,31 @@ public class fmrUsuarios extends javax.swing.JFrame {
         tblUsuarios.setModel(modeloTablaUsr);
         jScrollPane1.setViewportView(tblUsuarios);
 
+        jButton2.setBackground(new java.awt.Color(88, 164, 219));
         jButton2.setText("Ventas");
 
+        jButton3.setBackground(new java.awt.Color(88, 164, 219));
         jButton3.setText("Inventario");
 
+        jButton4.setBackground(new java.awt.Color(88, 164, 219));
         jButton4.setText("Cambio Roles");
 
+        jButton5.setBackground(new java.awt.Color(88, 164, 219));
         jButton5.setText("Gestion EXpedientes");
 
+        jButton6.setBackground(new java.awt.Color(88, 164, 219));
         jButton6.setText("Salir");
 
+        jButton7.setBackground(new java.awt.Color(88, 164, 219));
         jButton7.setText("Nuevo");
 
+        jButton8.setBackground(new java.awt.Color(88, 164, 219));
         jButton8.setText("Editar");
 
+        jButton9.setBackground(new java.awt.Color(88, 164, 219));
         jButton9.setText("Borrar");
 
+        btnBuscar.setBackground(new java.awt.Color(88, 164, 219));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +137,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jButton8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnBuscar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -135,44 +151,49 @@ public class fmrUsuarios extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btnBuscar))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton4)
-                                    .addComponent(jButton5)
-                                    .addComponent(jButton6))
-                                .addGap(178, 178, 178)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1)))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(430, 430, 430)
                         .addComponent(jButton7)
                         .addGap(224, 224, 224)
                         .addComponent(jButton8)
                         .addGap(217, 217, 217)
-                        .addComponent(jButton9)))
+                        .addComponent(jButton9))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(178, 178, 178)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(263, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(568, 568, 568))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(568, 568, 568))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(654, 654, 654))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addGap(75, 75, 75)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)
                         .addComponent(jButton2)
                         .addGap(58, 58, 58)
@@ -184,14 +205,14 @@ public class fmrUsuarios extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(jButton6))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(39, 39, 39)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(88, 88, 88)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
                     .addComponent(jButton8)
                     .addComponent(jButton9))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -333,6 +354,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JTextField txtBusqueda;

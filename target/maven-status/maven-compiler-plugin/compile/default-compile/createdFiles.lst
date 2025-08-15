@@ -24,6 +24,7 @@ com\mycompany\innovalens\view\fmrExpedientes$5.class
 dto\dtoExpediente.class
 com\mycompany\innovalens\view\fmrInventario$1.class
 com\mycompany\innovalens\view\fmrCreacionExpediente$2.class
+com\mycompany\innovalens\view\fmrInventario$8.class
 com\mycompany\innovalens\view\fmrMenuPrincipal$4.class
 com\mycompany\innovalens\view\fmrLogin$2.class
 com\mycompany\innovalens\view\fmrMenuPrincipal$7.class
@@ -66,7 +67,7 @@ com\mycompany\innovalens\view\fmrNuevoProducto$4.class
 com\mycompany\innovalens\view\fmrUsuarios$3.class
 com\mycompany\innovalens\view\fmrExpedientes.class
 com\mycompany\innovalens\view\fmrVentas$4.class
-dto\UserDto.class
 dao\registrosDAO.class
+dto\UserDto.class
 com\mycompany\innovalens\view\fmrInventario$3.class
 com\mycompany\innovalens\view\fmrVentas.class

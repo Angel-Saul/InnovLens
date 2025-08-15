@@ -52,6 +52,7 @@ public class Servicios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
@@ -63,15 +64,19 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(88, 164, 219));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setText("Cobrar");
 
+        jButton3.setBackground(new java.awt.Color(88, 164, 219));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setText("Nuevo");
 
+        jButton4.setBackground(new java.awt.Color(88, 164, 219));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton4.setText("Eliminar");
 
+        jButton5.setBackground(new java.awt.Color(88, 164, 219));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setText("Buscar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -93,16 +98,22 @@ public class Servicios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton6.setBackground(new java.awt.Color(88, 164, 219));
         jButton6.setText("jButton6");
 
+        jButton7.setBackground(new java.awt.Color(88, 164, 219));
         jButton7.setText("jButton7");
 
+        jButton8.setBackground(new java.awt.Color(88, 164, 219));
         jButton8.setText("jButton8");
 
+        jButton9.setBackground(new java.awt.Color(88, 164, 219));
         jButton9.setText("jButton9");
 
+        jButton10.setBackground(new java.awt.Color(88, 164, 219));
         jButton10.setText("jButton10");
 
+        jButton11.setBackground(new java.awt.Color(88, 164, 219));
         jButton11.setText("jButton11");
 
         jDesktopPane1.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);

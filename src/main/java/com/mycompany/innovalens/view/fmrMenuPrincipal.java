@@ -49,7 +49,6 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         btnExpedientes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblMensaje = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         btnAceptar = new javax.swing.JButton();
@@ -58,8 +57,10 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +68,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnVentas.setBackground(new java.awt.Color(88, 164, 219));
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +76,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnInventario.setBackground(new java.awt.Color(88, 164, 219));
         btnInventario.setText("Inventario");
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,13 +84,15 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnCambio.setText("Cambio Roles");
+        btnCambio.setBackground(new java.awt.Color(88, 164, 219));
+        btnCambio.setText("Usuarios");
         btnCambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCambioActionPerformed(evt);
             }
         });
 
+        btnExpedientes.setBackground(new java.awt.Color(88, 164, 219));
         btnExpedientes.setText("Gestion de Expenientes");
         btnExpedientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +100,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(88, 164, 219));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,10 +109,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         lblMensaje.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        lblMensaje.setText("Mensaje bienvenida");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel2.setText("Imagen de usuario");
+        lblMensaje.setText("Bienvenido al sistema");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setText("Cambio de contraseña");
@@ -114,6 +117,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jPasswordField1.setText("jPasswordField1");
 
+        btnAceptar.setBackground(new java.awt.Color(88, 164, 219));
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +125,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btncancelar.setBackground(new java.awt.Color(88, 164, 219));
         btncancelar.setText("Cancelar");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +140,6 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayer(btnExpedientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblMensaje, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPasswordField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnAceptar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -156,39 +160,35 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
                         .addGap(294, 294, 294))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnExpedientes, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMenuPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(428, 428, 428))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(365, 365, 365))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblMensaje))
-                                .addGap(351, 351, 351))))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnExpedientes, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(351, 351, 351))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(lblMensaje)
+                                .addGap(331, 331, 331))))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
+                        .addGap(75, 75, 75)
                         .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(192, 192, 192)
                         .addComponent(jLabel3)
                         .addGap(57, 57, 57)
                         .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -324,7 +324,6 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnVentas;
     private javax.swing.JButton btncancelar;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jPasswordField1;
     public javax.swing.JLabel lblMensaje;

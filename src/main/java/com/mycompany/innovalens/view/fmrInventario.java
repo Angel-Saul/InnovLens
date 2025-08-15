@@ -4,12 +4,18 @@
  */
 package com.mycompany.innovalens.view;
 
+import conexion.conexionDB;
 import dao.productoDAO;
 import dto.dtoExpediente;
 import dto.dtoProducto;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -45,7 +51,6 @@ public class fmrInventario extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -58,21 +63,20 @@ public class fmrInventario extends javax.swing.JFrame {
         btnCambio = new javax.swing.JButton();
         btnExpedientes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Inventario");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Busqueda");
-
         txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnAgregar.setBackground(new java.awt.Color(88, 164, 219));
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +85,7 @@ public class fmrInventario extends javax.swing.JFrame {
             }
         });
 
+        btnEditar.setBackground(new java.awt.Color(88, 164, 219));
         btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +94,7 @@ public class fmrInventario extends javax.swing.JFrame {
             }
         });
 
+        btnEliminar.setBackground(new java.awt.Color(88, 164, 219));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +106,7 @@ public class fmrInventario extends javax.swing.JFrame {
         tblProductos.setModel(tablaModelProd);
         jScrollPane2.setViewportView(tblProductos);
 
+        btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +114,7 @@ public class fmrInventario extends javax.swing.JFrame {
             }
         });
 
+        btnVentas.setBackground(new java.awt.Color(88, 164, 219));
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,10 +122,13 @@ public class fmrInventario extends javax.swing.JFrame {
             }
         });
 
+        btnInventario.setBackground(new java.awt.Color(88, 164, 219));
         btnInventario.setText("Inventario");
 
+        btnCambio.setBackground(new java.awt.Color(88, 164, 219));
         btnCambio.setText("Cambio Roles");
 
+        btnExpedientes.setBackground(new java.awt.Color(88, 164, 219));
         btnExpedientes.setText("Gestion de expedientes");
         btnExpedientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,10 +136,18 @@ public class fmrInventario extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(88, 164, 219));
         btnSalir.setText("Salir");
 
+        btnBuscar.setBackground(new java.awt.Color(88, 164, 219));
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(txtCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnAgregar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnEditar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -140,6 +159,7 @@ public class fmrInventario extends javax.swing.JFrame {
         jDesktopPane1.setLayer(btnCambio, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnExpedientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnBuscar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -152,10 +172,10 @@ public class fmrInventario extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(525, 525, 525)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(634, 634, 634)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnBuscar))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -182,14 +202,14 @@ public class fmrInventario extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(45, 45, 45)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscar))
+                        .addGap(87, 87, 87)
                         .addComponent(btnMenuPrin))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
@@ -304,6 +324,59 @@ public class fmrInventario extends javax.swing.JFrame {
         fmr.setVisible(true);
     }//GEN-LAST:event_btnVentasActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        String textoBusqueda = txtCodigo.getText().trim();
+
+        if (textoBusqueda.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese texto para buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String query = "SELECT id_producto, nombre_producto, descripcion, categoria, precio FROM producto " +
+                       "WHERE nombre_producto LIKE ? OR id_producto LIKE ?";
+
+        try (Connection conn = conexionDB.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+
+            String busquedaLike = "%" + textoBusqueda + "%";
+            ps.setString(1, busquedaLike);
+            ps.setString(2, busquedaLike);
+            //ps.setString(3, busquedaLike);
+
+            ResultSet rs = ps.executeQuery();
+
+            StringBuilder resultados = new StringBuilder();
+            boolean hayResultados = false;
+
+            while (rs.next()) {
+                hayResultados = true;
+                int id = rs.getInt("id_producto");
+                String nombre = rs.getString("nombre_producto");
+                String categoria = rs.getString("categoria");
+                String precio = rs.getString("precio");
+                String des = rs.getString("descripcion");
+
+                resultados.append("ID Producto: ").append(id)
+                          .append(", Nombre: ").append(nombre)
+                          .append(", Categoria: ").append(categoria)
+                          .append(", Precio: ").append(precio)
+                          //.append(", id_rol").append(idr)
+                          .append("\n");
+            }
+
+            if (hayResultados) {
+                JOptionPane.showMessageDialog(null, resultados.toString(), "Resultados de Búsqueda", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontraron coincidencias.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al realizar la búsqueda:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -355,6 +428,7 @@ public class fmrInventario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCambio;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
@@ -365,7 +439,6 @@ public class fmrInventario extends javax.swing.JFrame {
     private javax.swing.JButton btnVentas;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblProductos;
     private javax.swing.JTextField txtCodigo;

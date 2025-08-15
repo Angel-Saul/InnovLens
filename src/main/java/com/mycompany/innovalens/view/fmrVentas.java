@@ -49,6 +49,7 @@ public class fmrVentas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -80,6 +81,7 @@ public class fmrVentas extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +89,7 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
+        btnVentas.setBackground(new java.awt.Color(88, 164, 219));
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +97,7 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
+        btnInventario.setBackground(new java.awt.Color(88, 164, 219));
         btnInventario.setText("Inventario");
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +105,7 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
+        cambioRoles.setBackground(new java.awt.Color(88, 164, 219));
         cambioRoles.setText("Cambio Roles");
         cambioRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +113,7 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
+        btnGestion.setBackground(new java.awt.Color(88, 164, 219));
         btnGestion.setText("Gestion Expedientes");
         btnGestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,11 +123,14 @@ public class fmrVentas extends javax.swing.JFrame {
 
         btnSalir.setText("Salir");
 
-        jButton7.setText("jButton7");
+        jButton7.setBackground(new java.awt.Color(88, 164, 219));
+        jButton7.setText("Agregar");
 
-        jButton8.setText("jButton8");
+        jButton8.setBackground(new java.awt.Color(88, 164, 219));
+        jButton8.setText("Eliminar");
 
-        jButton9.setText("jButton9");
+        jButton9.setBackground(new java.awt.Color(88, 164, 219));
+        jButton9.setText("Buscar");
 
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -160,24 +169,18 @@ public class fmrVentas extends javax.swing.JFrame {
                         .addComponent(jButton8)
                         .addGap(200, 200, 200)
                         .addComponent(jButton9)
-                        .addContainerGap(289, Short.MAX_VALUE))
+                        .addContainerGap(280, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(cambioRoles)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(btnInventario)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(btnVentas)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(btnMenuPrin)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cambioRoles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnInventario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMenuPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(59, 59, 59)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,7 +223,7 @@ public class fmrVentas extends javax.swing.JFrame {
                             .addComponent(jButton8)
                             .addComponent(jButton9))
                         .addGap(30, 30, 30)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(btnGestion)
                         .addGap(75, 75, 75)

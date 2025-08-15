@@ -61,9 +61,10 @@ public class fmrNuevoUser extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 600));
 
+        btnCancelar.setBackground(new java.awt.Color(88, 164, 219));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +73,7 @@ public class fmrNuevoUser extends javax.swing.JFrame {
             }
         });
 
+        btnAceptar.setBackground(new java.awt.Color(88, 164, 219));
         btnAceptar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +117,7 @@ public class fmrNuevoUser extends javax.swing.JFrame {
                             .addComponent(txtNombre)
                             .addComponent(txtCorreo)
                             .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE))))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +134,7 @@ public class fmrNuevoUser extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnAceptar))

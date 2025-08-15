@@ -68,6 +68,7 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
         lblNombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -90,6 +91,7 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
 
         txtPrecio.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnGuardar.setBackground(new java.awt.Color(88, 164, 219));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +100,7 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setBackground(new java.awt.Color(88, 164, 219));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {

@@ -41,7 +41,7 @@ public class fmrLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 300));
 
         lblUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -66,7 +66,7 @@ public class fmrLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("InnovaLens");
 
-        btnContinuar.setBackground(new java.awt.Color(153, 204, 255));
+        btnContinuar.setBackground(new java.awt.Color(88, 164, 219));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar.setText("Continuar");
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +75,7 @@ public class fmrLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(102, 204, 255));
+        jButton1.setBackground(new java.awt.Color(88, 164, 219));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Cancelar");
 
@@ -120,7 +120,7 @@ public class fmrLogin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnContinuar)
                     .addComponent(jButton1))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
