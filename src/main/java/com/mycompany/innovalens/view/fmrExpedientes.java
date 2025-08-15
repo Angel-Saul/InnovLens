@@ -80,7 +80,6 @@ public class fmrExpedientes extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         txtBusqueda = new javax.swing.JTextField();
-        btnBusqueda = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblRegistros = new javax.swing.JTable();
         btnMenuPrin = new javax.swing.JButton();
@@ -90,6 +89,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
         btnExpedientes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,12 +126,11 @@ public class fmrExpedientes extends javax.swing.JFrame {
             }
         });
 
-        btnBusqueda.setBackground(new java.awt.Color(255, 255, 255));
-
         tblRegistros.setModel(tablaModel);
         jScrollPane2.setViewportView(tblRegistros);
 
         btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
+        btnMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Menu.png"))); // NOI18N
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,9 +139,11 @@ public class fmrExpedientes extends javax.swing.JFrame {
         });
 
         btnVentas.setBackground(new java.awt.Color(88, 164, 219));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ventas.png"))); // NOI18N
         btnVentas.setText("Ventas");
 
         btnInventario.setBackground(new java.awt.Color(88, 164, 219));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inventario.png"))); // NOI18N
         btnInventario.setText("Inventario");
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,12 +152,20 @@ public class fmrExpedientes extends javax.swing.JFrame {
         });
 
         btnCambio.setBackground(new java.awt.Color(88, 164, 219));
-        btnCambio.setText("Cambio Roles");
+        btnCambio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuarios.png"))); // NOI18N
+        btnCambio.setText("Usuarios");
+        btnCambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambioActionPerformed(evt);
+            }
+        });
 
         btnExpedientes.setBackground(new java.awt.Color(88, 164, 219));
+        btnExpedientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Expedientes.png"))); // NOI18N
         btnExpedientes.setText("Gestion Expedientes");
 
         btnSalir.setBackground(new java.awt.Color(88, 164, 219));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
 
         btnBuscar.setBackground(new java.awt.Color(88, 164, 219));
@@ -167,11 +176,13 @@ public class fmrExpedientes extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Expedientes");
+
         jDesktopPane1.setLayer(btnNuevo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnEditar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(txtBusqueda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnBusqueda, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnMenuPrin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnVentas, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -180,6 +191,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
         jDesktopPane1.setLayer(btnExpedientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnBuscar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -201,36 +213,38 @@ public class fmrExpedientes extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(505, 505, 505)
-                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscar)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnBusqueda))
+                        .addGap(629, 629, 629)
+                        .addComponent(jLabel1))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnVentas)
-                            .addComponent(btnMenuPrin)
-                            .addComponent(btnInventario)
-                            .addComponent(btnCambio)
-                            .addComponent(btnExpedientes)
-                            .addComponent(btnSalir))))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnMenuPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVentas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnInventario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCambio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnExpedientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(341, 341, 341)
+                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBusqueda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(btnMenuPrin))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1)
+                        .addGap(37, 37, 37)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscar))
-                        .addGap(2, 2, 2)))
-                .addGap(22, 22, 22)
-                .addComponent(btnMenuPrin)
+                            .addComponent(btnBuscar))))
                 .addGap(38, 38, 38)
                 .addComponent(btnVentas)
                 .addGap(38, 38, 38)
@@ -244,7 +258,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
                         .addComponent(btnExpedientes)
                         .addGap(38, 38, 38)
                         .addComponent(btnSalir)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,8 +355,8 @@ public class fmrExpedientes extends javax.swing.JFrame {
             return;
         }
 
-        String query = "SELECT id_producto, nombre_producto, descripcion, categoria, precio FROM producto " +
-                       "WHERE nombre_producto LIKE ? OR id_producto LIKE ?";
+        String query = "SELECT id_Expediente, nombre, telefono, historial FROM expediente " +
+                       "WHERE nombre LIKE ? OR telefono LIKE ?";
 
         try (Connection conn = conexionDB.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -359,17 +373,15 @@ public class fmrExpedientes extends javax.swing.JFrame {
 
             while (rs.next()) {
                 hayResultados = true;
-                int id = rs.getInt("id_producto");
-                String nombre = rs.getString("nombre_producto");
-                String categoria = rs.getString("categoria");
-                String precio = rs.getString("precio");
-                String des = rs.getString("descripcion");
+                int id = rs.getInt("id_Expediente");
+                String nombre = rs.getString("nombre");
+                String telefono = rs.getString("telefono");
+                String historial = rs.getString("historial");
 
                 resultados.append("ID Producto: ").append(id)
                           .append(", Nombre: ").append(nombre)
-                          .append(", Categoria: ").append(categoria)
-                          .append(", Precio: ").append(precio)
-                          //.append(", id_rol").append(idr)
+                          .append(", Telefono: ").append(telefono)
+                          .append(", Historial: ").append(historial)
                           .append("\n");
             }
 
@@ -384,6 +396,12 @@ public class fmrExpedientes extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambioActionPerformed
+        // TODO add your handling code here:
+        fmrUsuarios fmr = new fmrUsuarios();
+        fmr.setVisible(true);
+    }//GEN-LAST:event_btnCambioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -432,7 +450,6 @@ public class fmrExpedientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnCambio;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
@@ -443,6 +460,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVentas;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblRegistros;
     private javax.swing.JTextField txtBusqueda;

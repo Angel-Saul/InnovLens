@@ -99,22 +99,33 @@ public class Servicios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton6.setBackground(new java.awt.Color(88, 164, 219));
-        jButton6.setText("jButton6");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Menu.png"))); // NOI18N
+        jButton6.setText("Menu Principal");
 
         jButton7.setBackground(new java.awt.Color(88, 164, 219));
-        jButton7.setText("jButton7");
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ventas.png"))); // NOI18N
+        jButton7.setText("Ventas");
 
         jButton8.setBackground(new java.awt.Color(88, 164, 219));
-        jButton8.setText("jButton8");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inventario.png"))); // NOI18N
+        jButton8.setText("Inventario");
 
         jButton9.setBackground(new java.awt.Color(88, 164, 219));
-        jButton9.setText("jButton9");
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuarios.png"))); // NOI18N
+        jButton9.setText("Usuarios");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setBackground(new java.awt.Color(88, 164, 219));
-        jButton10.setText("jButton10");
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Expedientes.png"))); // NOI18N
+        jButton10.setText("Gestión de expedientes");
 
         jButton11.setBackground(new java.awt.Color(88, 164, 219));
-        jButton11.setText("jButton11");
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
+        jButton11.setText("Salir");
 
         jDesktopPane1.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -147,11 +158,12 @@ public class Servicios extends javax.swing.JFrame {
                                 .addComponent(jButton4)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton10)
-                                    .addComponent(jButton11))
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(283, 283, 283)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)))
                         .addGap(239, 239, 239))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(480, 480, 480)
@@ -160,11 +172,10 @@ public class Servicios extends javax.swing.JFrame {
                         .addComponent(jButton5)
                         .addGap(436, 436, 436))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton8)
-                            .addComponent(jButton7)
-                            .addComponent(jButton6)
-                            .addComponent(jButton9))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -178,14 +189,14 @@ public class Servicios extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7)
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addGap(21, 21, 21)
+                .addGap(14, 14, 14)
                 .addComponent(jButton8)
-                .addGap(77, 77, 77)
+                .addGap(84, 84, 84)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -196,7 +207,7 @@ public class Servicios extends javax.swing.JFrame {
                         .addComponent(jButton10)
                         .addGap(89, 89, 89)
                         .addComponent(jButton11)
-                        .addContainerGap(359, Short.MAX_VALUE))))
+                        .addContainerGap(343, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,6 +237,12 @@ public class Servicios extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:                                        
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        fmrUsuarios fmr = new fmrUsuarios();
+        fmr.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments

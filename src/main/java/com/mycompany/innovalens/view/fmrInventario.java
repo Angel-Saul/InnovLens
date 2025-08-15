@@ -107,6 +107,7 @@ public class fmrInventario extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblProductos);
 
         btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
+        btnMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Menu.png"))); // NOI18N
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +116,7 @@ public class fmrInventario extends javax.swing.JFrame {
         });
 
         btnVentas.setBackground(new java.awt.Color(88, 164, 219));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ventas.png"))); // NOI18N
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,12 +125,20 @@ public class fmrInventario extends javax.swing.JFrame {
         });
 
         btnInventario.setBackground(new java.awt.Color(88, 164, 219));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inventario.png"))); // NOI18N
         btnInventario.setText("Inventario");
 
         btnCambio.setBackground(new java.awt.Color(88, 164, 219));
-        btnCambio.setText("Cambio Roles");
+        btnCambio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuarios.png"))); // NOI18N
+        btnCambio.setText("Usuarios");
+        btnCambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambioActionPerformed(evt);
+            }
+        });
 
         btnExpedientes.setBackground(new java.awt.Color(88, 164, 219));
+        btnExpedientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Expedientes.png"))); // NOI18N
         btnExpedientes.setText("Gestion de expedientes");
         btnExpedientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,6 +147,7 @@ public class fmrInventario extends javax.swing.JFrame {
         });
 
         btnSalir.setBackground(new java.awt.Color(88, 164, 219));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
 
         btnBuscar.setBackground(new java.awt.Color(88, 164, 219));
@@ -376,6 +387,12 @@ public class fmrInventario extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambioActionPerformed
+        // TODO add your handling code here:
+        fmrUsuarios fmr = new fmrUsuarios();
+        fmr.setVisible(true);
+    }//GEN-LAST:event_btnCambioActionPerformed
 
     /**
      * @param args the command line arguments

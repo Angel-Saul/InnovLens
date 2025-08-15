@@ -61,6 +61,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
+        btnMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Background (2).png"))); // NOI18N
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +70,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnVentas.setBackground(new java.awt.Color(88, 164, 219));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Capa 1.png"))); // NOI18N
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +79,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnInventario.setBackground(new java.awt.Color(88, 164, 219));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Capa 2.png"))); // NOI18N
         btnInventario.setText("Inventario");
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +88,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnCambio.setBackground(new java.awt.Color(88, 164, 219));
+        btnCambio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Capa 4.png"))); // NOI18N
         btnCambio.setText("Usuarios");
         btnCambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +97,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnExpedientes.setBackground(new java.awt.Color(88, 164, 219));
+        btnExpedientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Capa 5.png"))); // NOI18N
         btnExpedientes.setText("Gestion de Expenientes");
         btnExpedientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +106,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnSalir.setBackground(new java.awt.Color(88, 164, 219));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Capa 3.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,14 +168,14 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnExpedientes, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addContainerGap(1223, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMenuPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)

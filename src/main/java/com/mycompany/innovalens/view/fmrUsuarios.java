@@ -60,6 +60,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
@@ -68,6 +69,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1440, 1024));
 
         jButton1.setBackground(new java.awt.Color(88, 164, 219));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Menu.png"))); // NOI18N
         jButton1.setText("Menu Principal");
         jButton1.setMaximumSize(new java.awt.Dimension(76, 27));
         jButton1.setMinimumSize(new java.awt.Dimension(76, 27));
@@ -93,18 +95,23 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblUsuarios);
 
         jButton2.setBackground(new java.awt.Color(88, 164, 219));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ventas.png"))); // NOI18N
         jButton2.setText("Ventas");
 
         jButton3.setBackground(new java.awt.Color(88, 164, 219));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inventario.png"))); // NOI18N
         jButton3.setText("Inventario");
 
         jButton4.setBackground(new java.awt.Color(88, 164, 219));
-        jButton4.setText("Cambio Roles");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuarios.png"))); // NOI18N
+        jButton4.setText("Usuarios");
 
         jButton5.setBackground(new java.awt.Color(88, 164, 219));
-        jButton5.setText("Gestion EXpedientes");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Expedientes.png"))); // NOI18N
+        jButton5.setText("Gestion Expedientes");
 
         jButton6.setBackground(new java.awt.Color(88, 164, 219));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
         jButton6.setText("Salir");
 
         jButton7.setBackground(new java.awt.Color(88, 164, 219));
@@ -138,6 +145,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jButton9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnBuscar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -151,13 +159,6 @@ public class fmrUsuarios extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btnBuscar))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(430, 430, 430)
-                        .addComponent(jButton7)
-                        .addGap(224, 224, 224)
-                        .addComponent(jButton8)
-                        .addGap(217, 217, 217)
-                        .addComponent(jButton9))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -167,26 +168,37 @@ public class fmrUsuarios extends javax.swing.JFrame {
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(178, 178, 178)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(263, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(430, 430, 430)
+                        .addComponent(jButton7)
+                        .addGap(224, 224, 224)
+                        .addComponent(jButton8)
+                        .addGap(217, 217, 217)
+                        .addComponent(jButton9)))
+                .addContainerGap(230, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(568, 568, 568))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(654, 654, 654))))
+                        .addGap(654, 654, 654))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(573, 573, 573))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(192, 192, 192))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addComponent(jLabel3)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addGap(85, 85, 85)
                 .addComponent(jLabel1)
-                .addGap(75, 75, 75)
+                .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
@@ -212,7 +224,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
                     .addComponent(jButton7)
                     .addComponent(jButton8)
                     .addComponent(jButton9))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,14 +233,14 @@ public class fmrUsuarios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1428, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -355,6 +367,7 @@ public class fmrUsuarios extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JTextField txtBusqueda;

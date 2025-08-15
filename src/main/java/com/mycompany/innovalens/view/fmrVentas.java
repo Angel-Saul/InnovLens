@@ -39,12 +39,13 @@ public class fmrVentas extends javax.swing.JFrame {
         btnMenuPrin = new javax.swing.JButton();
         btnVentas = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
-        cambioRoles = new javax.swing.JButton();
+        Usuarios = new javax.swing.JButton();
         btnGestion = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 1024));
@@ -82,6 +83,7 @@ public class fmrVentas extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         btnMenuPrin.setBackground(new java.awt.Color(88, 164, 219));
+        btnMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Menu.png"))); // NOI18N
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +92,7 @@ public class fmrVentas extends javax.swing.JFrame {
         });
 
         btnVentas.setBackground(new java.awt.Color(88, 164, 219));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ventas.png"))); // NOI18N
         btnVentas.setText("Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +101,7 @@ public class fmrVentas extends javax.swing.JFrame {
         });
 
         btnInventario.setBackground(new java.awt.Color(88, 164, 219));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inventario.png"))); // NOI18N
         btnInventario.setText("Inventario");
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,15 +109,17 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
-        cambioRoles.setBackground(new java.awt.Color(88, 164, 219));
-        cambioRoles.setText("Cambio Roles");
-        cambioRoles.addActionListener(new java.awt.event.ActionListener() {
+        Usuarios.setBackground(new java.awt.Color(88, 164, 219));
+        Usuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuarios.png"))); // NOI18N
+        Usuarios.setText("Usuarios");
+        Usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cambioRolesActionPerformed(evt);
+                UsuariosActionPerformed(evt);
             }
         });
 
         btnGestion.setBackground(new java.awt.Color(88, 164, 219));
+        btnGestion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Expedientes.png"))); // NOI18N
         btnGestion.setText("Gestion Expedientes");
         btnGestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +127,8 @@ public class fmrVentas extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(88, 164, 219));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
 
         jButton7.setBackground(new java.awt.Color(88, 164, 219));
@@ -132,6 +140,9 @@ public class fmrVentas extends javax.swing.JFrame {
         jButton9.setBackground(new java.awt.Color(88, 164, 219));
         jButton9.setText("Buscar");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo (2).png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -142,12 +153,13 @@ public class fmrVentas extends javax.swing.JFrame {
         jDesktopPane1.setLayer(btnMenuPrin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnVentas, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnInventario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(cambioRoles, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(Usuarios, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnGestion, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton7, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -157,8 +169,8 @@ public class fmrVentas extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(btnSalir)
-                        .addGap(283, 283, 283)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(209, 209, 209)
                         .addComponent(jScrollPane2)
                         .addGap(269, 269, 269))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -169,10 +181,10 @@ public class fmrVentas extends javax.swing.JFrame {
                         .addComponent(jButton8)
                         .addGap(200, 200, 200)
                         .addComponent(jButton9)
-                        .addContainerGap(280, Short.MAX_VALUE))
+                        .addContainerGap(257, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cambioRoles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnInventario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnMenuPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -187,11 +199,17 @@ public class fmrVentas extends javax.swing.JFrame {
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(500, 500, 500))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(33, 33, 33)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,7 +231,7 @@ public class fmrVentas extends javax.swing.JFrame {
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(cambioRoles)))
+                        .addComponent(Usuarios)))
                 .addGap(70, 70, 70)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -223,7 +241,7 @@ public class fmrVentas extends javax.swing.JFrame {
                             .addComponent(jButton8)
                             .addComponent(jButton9))
                         .addGap(30, 30, 30)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(btnGestion)
                         .addGap(75, 75, 75)
@@ -267,9 +285,11 @@ public class fmrVentas extends javax.swing.JFrame {
         fmr.setVisible(true);
     }//GEN-LAST:event_btnInventarioActionPerformed
 
-    private void cambioRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioRolesActionPerformed
+    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cambioRolesActionPerformed
+        fmrUsuarios fmr = new fmrUsuarios();
+        fmr.setVisible(true);
+    }//GEN-LAST:event_UsuariosActionPerformed
 
     private void btnGestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionActionPerformed
         // TODO add your handling code here:
@@ -313,12 +333,12 @@ public class fmrVentas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Usuarios;
     private javax.swing.JButton btnGestion;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnMenuPrin;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVentas;
-    private javax.swing.JButton cambioRoles;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
@@ -326,6 +346,7 @@ public class fmrVentas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

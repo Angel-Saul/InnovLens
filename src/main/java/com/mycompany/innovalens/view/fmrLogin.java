@@ -206,9 +206,9 @@ public class fmrLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(this, "Error", "Usuario o Contraseña Incorrectos", 0);
             txtUsuario.setText("");
-            txtPassword.setText("");
+            txtPassword.setText(""); 
         }
-        this.dispose();
+        //this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
