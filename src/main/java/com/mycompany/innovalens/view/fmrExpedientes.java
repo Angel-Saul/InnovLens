@@ -378,7 +378,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
                 String telefono = rs.getString("telefono");
                 String historial = rs.getString("historial");
 
-                resultados.append("ID Producto: ").append(id)
+                resultados.append("ID Expediente: ").append(id)
                           .append(", Nombre: ").append(nombre)
                           .append(", Telefono: ").append(telefono)
                           .append(", Historial: ").append(historial)
