@@ -208,7 +208,7 @@ public class fmrLogin extends javax.swing.JFrame {
             txtUsuario.setText("");
             txtPassword.setText(""); 
         }
-        //this.dispose();
+        this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
