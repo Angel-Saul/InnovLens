@@ -18,14 +18,25 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Formulario de gestión de usuarios para el sistema InnovaLens Permite
+ * visualizar, buscar, crear, editar y eliminar usuarios del sistema
+ */
+/**
  *
  * @author jonhy
  */
 public class fmrUsuarios extends javax.swing.JFrame {
 
+    // Modelo de tabla para mostrar los usuarios
     private DefaultTableModel modeloTablaUsr;
+
     /**
      * Creates new form fmrUsuarios
+     */
+
+    /**
+     * Constructor del formulario de usuarios Inicializa la tabla de usuarios y
+     * carga los datos existentes
      */
     public fmrUsuarios() {
         setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
@@ -253,6 +264,10 @@ public class fmrUsuarios extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+    /**
+     * Maneja el evento del botón Buscar Realiza búsqueda de usuarios por nombre
+     * o correo electrónico
+     */
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
@@ -262,12 +277,11 @@ public class fmrUsuarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese texto para buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        // Consulta SQL para buscar usuarios
+        String query = "SELECT id_usuario, nombre, correo, contraseña FROM usuario "
+                + "WHERE nombre LIKE ? OR correo LIKE ?";
 
-        String query = "SELECT id_usuario, nombre, correo, contraseña FROM usuario " +
-                       "WHERE nombre LIKE ? OR correo LIKE ?";
-
-        try (Connection conn = conexionDB.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(query)) {
+        try (Connection conn = conexionDB.obtenerConexion(); PreparedStatement ps = conn.prepareStatement(query)) {
 
             String busquedaLike = "%" + textoBusqueda + "%";
             ps.setString(1, busquedaLike);
@@ -278,7 +292,9 @@ public class fmrUsuarios extends javax.swing.JFrame {
 
             StringBuilder resultados = new StringBuilder();
             boolean hayResultados = false;
-
+            
+            // Procesa los resultados de la búsqueda
+            
             while (rs.next()) {
                 hayResultados = true;
                 int id = rs.getInt("id_usuario");
@@ -288,13 +304,13 @@ public class fmrUsuarios extends javax.swing.JFrame {
                 //int idr = rs.getInt("id_rol");
 
                 resultados.append("ID: ").append(id)
-                          .append(", Nombre: ").append(nombre)
-                          .append(", Correo: ").append(correo)
-                          .append(", Contraseña: ").append(contraseña)
-                          //.append(", id_rol").append(idr)
-                          .append("\n");
+                        .append(", Nombre: ").append(nombre)
+                        .append(", Correo: ").append(correo)
+                        .append(", Contraseña: ").append(contraseña)
+                        //.append(", id_rol").append(idr)
+                        .append("\n");
             }
-
+            // Muestra los resultados o mensaje si no hay coincidencias
             if (hayResultados) {
                 JOptionPane.showMessageDialog(null, resultados.toString(), "Resultados de Búsqueda", JOptionPane.INFORMATION_MESSAGE);
             } else {
@@ -341,13 +357,17 @@ public class fmrUsuarios extends javax.swing.JFrame {
             }
         });
     }
+    /**
+     * Carga los usuarios desde la base de datos y los muestra en la tabla
+     */
     
     public void cargarUsuarios() {
         modeloTablaUsr.setRowCount(0);
         List<dtoUsuarios> productos = usuariosDAO.mostrarTodos();
+        // Agrega cada usuario a la tabla
         for (dtoUsuarios r : productos) {
 
-            modeloTablaUsr.addRow(new Object[]{r.getId_usuario(), r.getNombre(),r.getCorreo(),r.getId_rol()});
+            modeloTablaUsr.addRow(new Object[]{r.getId_usuario(), r.getNombre(), r.getCorreo(), r.getId_rol()});
             //System.out.println(r.getNombreUsuario());
         }
     }
