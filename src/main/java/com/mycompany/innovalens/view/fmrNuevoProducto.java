@@ -12,12 +12,16 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * Formulario para crear/editar productos en el sistema InnovaLens Permite
+ * agregar nuevos productos o modificar los existentes
+ */
+/**
  *
  * @author jonhy
  */
 public class fmrNuevoProducto extends javax.swing.JFrame {
 
-    dtoProducto producto;
+    dtoProducto producto; // Objeto que almacena los datos del producto
 
     /**
      * Creates new form fmrNuevoProducto
@@ -25,6 +29,7 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
     public fmrNuevoProducto(dtoProducto producto) {
         initComponents();
         this.producto = producto;
+        // Si es edición, carga los datos existentes
         if (this.producto.getIdProducto() != null) {
             txtNombre.setText(this.producto.getNombreProducto());
             txtDescripcion.setText(this.producto.getDescripcion());
@@ -35,6 +40,9 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
         onclose();
     }
 
+    /**
+     * Constructor para creación de nuevo producto
+     */
     public fmrNuevoProducto() {
         initComponents();
         this.producto = new dtoProducto();
@@ -206,21 +214,24 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Maneja el evento del botón Guardar Guarda los datos del producto (nuevo o
+     * editado) en la base de datos
+     */
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        this.producto.setNombreProducto(txtNombre.getText());
+        this.producto.setNombreProducto(txtNombre.getText());// Obtiene los valores de los campos del formulario
         this.producto.setDescripcion(txtDescripcion.getText());
         this.producto.setCategoria(txtCategoria.getText());
         this.producto.setPrecio(Double.parseDouble(txtPrecio.getText()));
         this.producto.setCantidad(Integer.parseInt(txtCantidad.getText()));
-
+        
         productoDAO dao = new productoDAO();
-
+        // Decide si es creación o actualización
         if (this.producto.getIdProducto() == null) {
-            dao.create(this.producto);
+            dao.create(this.producto); //Crea nuevo producto
         } else {
-            Boolean res = dao.update(producto);
+            Boolean res = dao.update(producto); //Actualiza existente 
             if (res) {
                 fmrNuevoProducto frm = new fmrNuevoProducto();
                 frm.setVisible(true);
@@ -229,6 +240,12 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGuardarActionPerformed
     }
+
+    /**
+     * Maneja el evento del botón Cancelar Regresa al formulario de inventario
+     * sin guardar cambios
+     */
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         fmrInventario frm = new fmrInventario();
@@ -270,7 +287,11 @@ public class fmrNuevoProducto extends javax.swing.JFrame {
             }
         });
     }
-
+    /**
+     * Configura el comportamiento al cerrar la ventana
+     * Regresa al formulario de inventario cuando se cierra este formulario
+     */
+    
     public void onclose() {
         addWindowListener(new WindowAdapter() {
             @Override

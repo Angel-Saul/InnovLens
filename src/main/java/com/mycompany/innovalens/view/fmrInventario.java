@@ -21,15 +21,24 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 /**
+ * Formulario de gestión de inventario para el sistema InnovaLens Permite
+ * visualizar, agregar, editar y eliminar productos del inventario
+ */
+/**
  *
  * @author jonhy
  */
 public class fmrInventario extends javax.swing.JFrame {
 
+    // Modelo de tabla para mostrar los productos
     private DefaultTableModel tablaModelProd;
 
     /**
      * Creates new form fmrInventario
+     */
+    /**
+     * Constructor del formulario de inventario Inicializa la tabla de productos
+     * y carga los datos existentes
      */
     public fmrInventario() {
         setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
@@ -200,12 +209,12 @@ public class fmrInventario extends javax.swing.JFrame {
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(160, 160, 160)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(354, 354, 354)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(355, 355, 355)
                                 .addComponent(btnAgregar)
-                                .addGap(107, 107, 107)
+                                .addGap(87, 87, 87)
                                 .addComponent(btnEditar)
-                                .addGap(52, 52, 52)
+                                .addGap(72, 72, 72)
                                 .addComponent(btnEliminar)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -214,26 +223,15 @@ public class fmrInventario extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscar))
                         .addGap(87, 87, 87)
-                        .addComponent(btnMenuPrin))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAgregar)
-                            .addComponent(btnEditar)
-                            .addComponent(btnEliminar))))
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addComponent(btnMenuPrin)
+                        .addGap(26, 26, 26)
                         .addComponent(btnVentas)
                         .addGap(30, 30, 30)
                         .addComponent(btnInventario)
@@ -242,7 +240,15 @@ public class fmrInventario extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(btnExpedientes)
                         .addGap(42, 42, 42)
-                        .addComponent(btnSalir)))
+                        .addComponent(btnSalir))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgregar)
+                            .addComponent(btnEditar)
+                            .addComponent(btnEliminar))
+                        .addGap(128, 128, 128)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(218, 218, 218))
         );
 
@@ -266,6 +272,10 @@ public class fmrInventario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Maneja el evento del botón Agregar producto Abre el formulario para crear
+     * un nuevo producto
+     */
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
         dtoProducto producto = new dtoProducto();
@@ -276,12 +286,18 @@ public class fmrInventario extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnAgregarActionPerformed
+    /**
+     * Maneja el evento del botón Editar producto Abre el formulario de edición
+     * con los datos del producto seleccionado
+     */
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         int row = tblProductos.getSelectedRow();
 
         if (row != -1) {
+            // Obtiene los datos del producto seleccionado
+
             System.out.println("valor: " + tblProductos.getValueAt(row, 0));
             String strID = tblProductos.getValueAt(row, 0).toString();
             Integer idProducto = Integer.parseInt(strID);
@@ -291,6 +307,7 @@ public class fmrInventario extends javax.swing.JFrame {
             Double precio = (Double) tblProductos.getValueAt(row, 4);
             Integer cantidad = (int) tblProductos.getValueAt(row, 5);
 
+            // Crea el DTO y abre el formulario de edición
             dtoProducto producto = new dtoProducto(idProducto, nombreProducto, descripcion, categoria, precio, cantidad);
             fmrNuevoProducto update = new fmrNuevoProducto(producto);
             update.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -299,6 +316,10 @@ public class fmrInventario extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnEditarActionPerformed
+    /**
+     * Maneja el evento del botón Eliminar producto Elimina el producto
+     * seleccionado de la base de datos
+     */
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
@@ -315,26 +336,43 @@ public class fmrInventario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    /**
+     * Maneja el evento del botón Menú Principal Regresa al menú principal del
+     * sistema
+     */
+
     private void btnMenuPrinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrinActionPerformed
         // TODO add your handling code here:
         fmrMenuPrincipal fmrMP = new fmrMenuPrincipal();
         fmrMP.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMenuPrinActionPerformed
-
+    /**
+     * Maneja el evento del botón Expedientes Abre el formulario de gestión de
+     * expedientes
+     */
+    
     private void btnExpedientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedientesActionPerformed
         // TODO add your handling code here:
         fmrExpedientes fmr = new fmrExpedientes();
         fmr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnExpedientesActionPerformed
-
+    /**
+     * Maneja el evento del botón Ventas
+     * Abre el formulario de ventas
+     */
+    
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         // TODO add your handling code here:
         fmrVentas fmr = new fmrVentas();
         fmr.setVisible(true);
     }//GEN-LAST:event_btnVentasActionPerformed
-
+    /**
+     * Maneja el evento del botón Buscar
+     * Realiza búsqueda de productos por nombre o ID
+     */
+    
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         String textoBusqueda = txtCodigo.getText().trim();
@@ -344,11 +382,10 @@ public class fmrInventario extends javax.swing.JFrame {
             return;
         }
 
-        String query = "SELECT id_producto, nombre_producto, descripcion, categoria, precio FROM producto " +
-                       "WHERE nombre_producto LIKE ? OR id_producto LIKE ?";
+        String query = "SELECT id_producto, nombre_producto, descripcion, categoria, precio FROM producto "
+                + "WHERE nombre_producto LIKE ? OR id_producto LIKE ?";
 
-        try (Connection conn = conexionDB.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(query)) {
+        try (Connection conn = conexionDB.obtenerConexion(); PreparedStatement ps = conn.prepareStatement(query)) {
 
             String busquedaLike = "%" + textoBusqueda + "%";
             ps.setString(1, busquedaLike);
@@ -369,11 +406,11 @@ public class fmrInventario extends javax.swing.JFrame {
                 String des = rs.getString("descripcion");
 
                 resultados.append("ID Producto: ").append(id)
-                          .append(", Nombre: ").append(nombre)
-                          .append(", Categoria: ").append(categoria)
-                          .append(", Precio: ").append(precio)
-                          //.append(", id_rol").append(idr)
-                          .append("\n");
+                        .append(", Nombre: ").append(nombre)
+                        .append(", Categoria: ").append(categoria)
+                        .append(", Precio: ").append(precio)
+                        //.append(", id_rol").append(idr)
+                        .append("\n");
             }
 
             if (hayResultados) {
@@ -387,7 +424,10 @@ public class fmrInventario extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
-
+    /**
+     * Maneja el evento del botón Usuarios
+     * Abre el formulario de gestión de usuarios
+     */
     private void btnCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambioActionPerformed
         // TODO add your handling code here:
         fmrUsuarios fmr = new fmrUsuarios();
@@ -430,9 +470,11 @@ public class fmrInventario extends javax.swing.JFrame {
 
         });
     }
-
+    /**
+     * Carga los productos desde la base de datos y los muestra en la tabla
+     */
     public void cargarProductos() {
-        tablaModelProd.setRowCount(0);
+        tablaModelProd.setRowCount(0);  //Limpia la tabla
         List<dtoProducto> productos = productoDAO.mostrarProductos();
         for (dtoProducto r : productos) {
 

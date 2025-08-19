@@ -23,13 +23,23 @@ import javax.swing.table.TableModel;
  *
  * @author jonhy
  */
+/**
+ * Formulario de gestión de expedientes para el sistema InnovaLens Permite
+ * crear, editar, eliminar y buscar registros de expedientes médicos
+ */
 public class fmrExpedientes extends javax.swing.JFrame {
 
+    // Modelo de tabla para mostrar los expedientes
     private DefaultTableModel tablaModel;
     //private dtoExpediente seleccion;
 
     /**
      * Creates new form frmExpedientes
+     */
+    /**
+     * Constructor del formulario de expedientes Inicializa la tabla y carga los
+     * expedientes existentes
+     *
      */
     public fmrExpedientes() {
         setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
@@ -279,7 +289,11 @@ public class fmrExpedientes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Boton de creacion de expediente 
+     /**
+     * Maneja el evento del botón Nuevo Registro Abre el formulario para crear
+     * un nuevo expediente
+     */
+
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
         dtoExpediente expediente = new dtoExpediente();
@@ -288,12 +302,16 @@ public class fmrExpedientes extends javax.swing.JFrame {
         creacion.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnNuevoActionPerformed
-    //Boton de edicion de expediente 
+    /**
+     * Maneja el evento del botón Editar Registro Abre el formulario de edición
+     * con los datos del expediente seleccionado
+     */
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         //System.out.println(this.seleccion.getNombre());
         int row = tblRegistros.getSelectedRow();
 
+        // Obtiene los datos del expediente seleccionado
         if (row != -1) {
             System.out.println("valor: " + tblRegistros.getValueAt(row, 0));
             String strID = tblRegistros.getValueAt(row, 0).toString();
@@ -302,6 +320,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
             String telefono = (String) tblRegistros.getValueAt(row, 2);
             String historial = (String) tblRegistros.getValueAt(row, 3);
 
+            // Crea el DTO y abre el formulario de edición
             dtoExpediente expediente = new dtoExpediente(id, nombre, telefono, historial);
             fmrCreacionExpediente update = new fmrCreacionExpediente(expediente);
             update.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -309,13 +328,18 @@ public class fmrExpedientes extends javax.swing.JFrame {
             this.dispose();
 
         }
-        
+
     }//GEN-LAST:event_btnEditarActionPerformed
 
 
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    /**
+     * Maneja el evento del botón Eliminar Elimina el expediente seleccionado de
+     * la base de datos
+     */
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
@@ -328,15 +352,25 @@ public class fmrExpedientes extends javax.swing.JFrame {
 
             expedienteDAO expediente = new expedienteDAO();
             expediente.delete(id);
-            cargarExpedientes();
+            cargarExpedientes();  // Actualiza la tabla
+
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
+    /**
+     * Maneja el evento del botón Menú Principal Regresa al menú principal del
+     * sistema
+     */
 
     private void btnMenuPrinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrinActionPerformed
         // TODO add your handling code here:
         fmrMenuPrincipal fmr = new fmrMenuPrincipal();
         fmr.setVisible(true);
     }//GEN-LAST:event_btnMenuPrinActionPerformed
+
+    /**
+     * Maneja el evento del botón Inventario Abre el formulario de gestión de
+     * inventario
+     */
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         // TODO add your handling code here:
@@ -345,6 +379,11 @@ public class fmrExpedientes extends javax.swing.JFrame {
         fmr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    /**
+     * Maneja el evento del botón Buscar Realiza búsqueda de expedientes por
+     * nombre o teléfono
+     */
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
@@ -355,11 +394,11 @@ public class fmrExpedientes extends javax.swing.JFrame {
             return;
         }
 
-        String query = "SELECT id_Expediente, nombre, telefono, historial FROM expediente " +
-                       "WHERE nombre LIKE ? OR telefono LIKE ?";
+        // Consulta SQL para buscar expedientes
+        String query = "SELECT id_Expediente, nombre, telefono, historial FROM expediente "
+                + "WHERE nombre LIKE ? OR telefono LIKE ?";
 
-        try (Connection conn = conexionDB.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(query)) {
+        try (Connection conn = conexionDB.obtenerConexion(); PreparedStatement ps = conn.prepareStatement(query)) {
 
             String busquedaLike = "%" + textoBusqueda + "%";
             ps.setString(1, busquedaLike);
@@ -371,6 +410,7 @@ public class fmrExpedientes extends javax.swing.JFrame {
             StringBuilder resultados = new StringBuilder();
             boolean hayResultados = false;
 
+            // Procesa los resultados de la búsqueda
             while (rs.next()) {
                 hayResultados = true;
                 int id = rs.getInt("id_Expediente");
@@ -379,12 +419,13 @@ public class fmrExpedientes extends javax.swing.JFrame {
                 String historial = rs.getString("historial");
 
                 resultados.append("ID Producto: ").append(id)
-                          .append(", Nombre: ").append(nombre)
-                          .append(", Telefono: ").append(telefono)
-                          .append(", Historial: ").append(historial)
-                          .append("\n");
+                        .append(", Nombre: ").append(nombre)
+                        .append(", Telefono: ").append(telefono)
+                        .append(", Historial: ").append(historial)
+                        .append("\n");
             }
 
+            // Muestra los resultados o mensaje si no hay coincidencias
             if (hayResultados) {
                 JOptionPane.showMessageDialog(null, resultados.toString(), "Resultados de Búsqueda", JOptionPane.INFORMATION_MESSAGE);
             } else {
@@ -439,9 +480,13 @@ public class fmrExpedientes extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * Carga los expedientes desde la base de datos y los muestra en la tabla
+     */
     public void cargarExpedientes() {
         tablaModel.setRowCount(0);
         List<dtoExpediente> registros = expedienteDAO.mostrarTodos();
+        // Agrega cada expediente a la tabla
         for (dtoExpediente r : registros) {
             tablaModel.addRow(new Object[]{r.getId(), r.getNombre(), r.getTelefono(), r.getHistorial()});
         }

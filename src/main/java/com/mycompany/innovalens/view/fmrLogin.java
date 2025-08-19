@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+// Importa las clases necesarias para el DAO (Data Access Object), DTO (Data Transfer Object) y componentes de Swing
 package com.mycompany.innovalens.view;
 
 import dao.LoginDao;
@@ -12,10 +13,18 @@ import javax.swing.JOptionPane;
  *
  * @author jonhy
  */
+/**
+ * Formulario de inicio de sesión para la aplicación InnovaLens Permite a los
+ * usuarios ingresar sus credenciales (usuario y contraseña) para acceder al
+ * sistema.
+ */
 public class fmrLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form fmrLogin
+     */
+    /**
+     * Constructor que inicializa los componentes de la interfaz
      */
     public fmrLogin() {
         initComponents();
@@ -146,7 +155,8 @@ public class fmrLogin extends javax.swing.JFrame {
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
-
+    // Evento del botón Continuar - valida las credenciales
+    
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
         validarcredenciales();
@@ -185,16 +195,23 @@ public class fmrLogin extends javax.swing.JFrame {
                 new fmrLogin().setVisible(true);
             }
         });
+        
     }
-
+        /*
+     *Valida las credenciales del usuario contra la base de datos
+     - Obtiene el usuario y contraseña ingresados
+     - Verifica con LoginDao si son válidos
+     - Si son válidos, abre el menú principal y cierra el login
+     - Si no son válidos, muestra mensaje de error y limpia los campos
+     */
+    
     public void validarcredenciales() {
         String usuario = txtUsuario.getText();
         String password = String.valueOf(txtPassword.getPassword());
 
         LoginDao loginDAO = new LoginDao();
         Boolean isUser = loginDAO.login(usuario, password);
-        
-        
+
         UserDto us = loginDAO.getUserData(usuario, password);
 
         if (isUser) {
@@ -202,13 +219,13 @@ public class fmrLogin extends javax.swing.JFrame {
             formmenu.setVisible(true);
             txtUsuario.setText("");
             txtPassword.setText("");
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(this, "Error", "Usuario o Contraseña Incorrectos", 0);
             txtUsuario.setText("");
-            txtPassword.setText(""); 
+            txtPassword.setText("");
         }
-        //this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

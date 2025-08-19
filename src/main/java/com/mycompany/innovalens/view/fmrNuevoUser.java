@@ -9,14 +9,19 @@ import dto.dtoUsuarios;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author jonhy
  */
+/**
+ * Formulario para creación y edición de usuarios del sistema Permite registrar
+ * nuevos usuarios o modificar los existentes
+ */
 public class fmrNuevoUser extends javax.swing.JFrame {
 
-    dtoUsuarios usuario;
+    dtoUsuarios usuario;  // Objeto que almacena los datos del usuario
 
     /**
      * Creates new form fmrNuevoUser
@@ -24,6 +29,7 @@ public class fmrNuevoUser extends javax.swing.JFrame {
     public fmrNuevoUser(dtoUsuarios usuario) {
         initComponents();
         this.usuario = usuario;
+        // Si es edición, carga los datos existentes
         if (this.usuario.getId_usuario() != null) {
             txtNombre.setText(this.usuario.getNombre());
             txtCorreo.setText(this.usuario.getCorreo());
@@ -32,6 +38,9 @@ public class fmrNuevoUser extends javax.swing.JFrame {
         onclose();
     }
 
+    /**
+     * Constructor para creación de nuevo usuario
+     */
     public fmrNuevoUser() {
         initComponents();
         this.usuario = new dtoUsuarios();
@@ -161,18 +170,32 @@ public class fmrNuevoUser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Maneja el evento del botón Aceptar Guarda los datos del usuario (nuevo o
+     * editado) en la base de datos
+     */
+
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
+        // Obtiene los valores de los campos del formulario
         this.usuario.setNombre(txtNombre.getText());
         this.usuario.setCorreo(txtCorreo.getText());
         this.usuario.setContra(txtPass.getText());
 
-        usuariosDAO dao = new usuariosDAO();
+        String nombre = txtNombre.getText().trim();
 
+        // Validaciones de los datos ingresados
+        if (!nombre.matches("[a-zA-Z\\s]+")) {
+            JOptionPane.showMessageDialog(null, "El nombre solo debe contener letras");
+            return;
+        }
+        
+        usuariosDAO dao = new usuariosDAO();
+        // Decide si es creación o actualización
         if (this.usuario.getId_usuario() == null) {
-            dao.create(this.usuario);
+            dao.create(this.usuario);// Crea nuevo usuario
         } else {
-            Boolean res = dao.update(usuario);
+            Boolean res = dao.update(usuario);//Edita un usuario
             if (res) {
                 fmrUsuarios frm = new fmrUsuarios();
                 frm.setVisible(true);
@@ -180,6 +203,12 @@ public class fmrNuevoUser extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnAceptarActionPerformed
     }
+    
+    /**
+     * Maneja el evento del botón Cancelar
+     * Regresa al formulario de usuarios sin guardar cambios
+     */
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         fmrUsuarios fmr = new fmrUsuarios();
@@ -221,6 +250,11 @@ public class fmrNuevoUser extends javax.swing.JFrame {
             }
         });
     }
+    
+    /**
+     * Configura el comportamiento al cerrar la ventana
+     * Regresa al formulario de usuarios cuando se cierra este formulario
+     */
 
     public void onclose() {
         addWindowListener(new WindowAdapter() {

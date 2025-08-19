@@ -15,32 +15,45 @@ import javax.swing.JOptionPane;
  *
  * @author jonhy
  */
+/**
+ * Formulario para creación/edición de expedientes médicos Permite registrar
+ * nuevos expedientes o modificar los existentes
+ */
 public class fmrCreacionExpediente extends javax.swing.JFrame {
-    
-    dtoExpediente expediente;
+
+    dtoExpediente expediente;// Objeto que almacena los datos del expediente
+
     /**
      * Creates new form creacionExpediente
+     *
      * @param expediente
      */
     public fmrCreacionExpediente(dtoExpediente expediente) {
         initComponents();
         this.expediente = expediente;
-        if(this.expediente.getId() != null){
+        // Si es edición, carga los datos existentes
+        if (this.expediente.getId() != null) {
             txtHistorial.setText(this.expediente.getHistorial());
             txtNombre.setText(this.expediente.getNombre());
             txtTelefono.setText(this.expediente.getTelefono());
         }
-         onclose();
+        onclose();
     }
-    
+
+    /**
+     * Constructor para creación de nuevo expediente
+     */
     public fmrCreacionExpediente() {
         initComponents();
         this.expediente = new dtoExpediente();
         onclose();
     }
-    
-    
-    public void onclose(){
+
+    /**
+     * Configura el comportamiento al cerrar la ventana Regresa al formulario de
+     * expedientes cuando se cierra este formulario
+     */
+    public void onclose() {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -182,37 +195,69 @@ public class fmrCreacionExpediente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Maneja el evento del botón Guardar Guarda los datos del expediente (nuevo
+     * o editado) en la base de datos
+     */
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         //dtoExpediente expediente = new dtoExpediente();
+        // Obtiene los valores de los campos del formulario
         this.expediente.setNombre(txtNombre.getText());
         this.expediente.setTelefono(txtTelefono.getText());
         this.expediente.setHistorial(txtHistorial.getText());
         
-        expedienteDAO dao = new expedienteDAO();
-        
-        if(this.expediente.getId() == null){
-        dao.create(this.expediente);
-        }else{
-        Boolean res = dao.update(expediente);
-        if(res){
-            fmrExpedientes frm = new fmrExpedientes();
-            frm.setVisible(true);
-            this.dispose();
-        }else{
-            
-        }
-        }
-        
-        
-    }//GEN-LAST:event_btnGuardarActionPerformed
+        // Obtiene los valores de los campos del formulario
+        String nombre = txtNombre.getText().trim();
+        String telefono = txtTelefono.getText().trim();
+        String historial = txtHistorial.getText().trim();
 
+        // Validaciones con expresiones regulares
+        if (!nombre.matches("[a-zA-Z\\s]+")) {
+            JOptionPane.showMessageDialog(null, "El nombre solo debe contener letras");
+            return;
+        }
+
+        if (!telefono.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "El teléfono solo debe contener números");
+            return;
+        }
+
+        if (!historial.matches("[a-zA-Z\\s]+")) {
+            JOptionPane.showMessageDialog(null, "El historial solo debe contener letras");
+            return;
+        }
+
+        expedienteDAO dao = new expedienteDAO();
+        // Decide si es creación o actualización
+        if (this.expediente.getId() == null) {
+            dao.create(this.expediente);// Crea nuevo expediente
+            JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+        } else {
+            Boolean res = dao.update(expediente);// Actualiza expediente existente
+            if (res) {
+                fmrExpedientes frm = new fmrExpedientes();
+                frm.setVisible(true);
+                this.dispose();
+            } else {
+                //JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+            }
+            //JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+        }
+
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+    /**
+     * Maneja el evento del botón Cancelar
+     * Regresa al formulario de expedientes sin guardar cambios
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         fmrExpedientes frm = new fmrExpedientes();
-            frm.setVisible(true);
-            this.dispose();
-        
+        frm.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

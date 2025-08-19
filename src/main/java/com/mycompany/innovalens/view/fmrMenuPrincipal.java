@@ -12,14 +12,14 @@ import dto.UserDto;
  */
 public class fmrMenuPrincipal extends javax.swing.JFrame {
 
-    UserDto user;
+    UserDto user;// Objeto que almacena los datos del usuario autenticado
 
     /**
-     * Creates new form fmrMenuPrincipal
-     *
-     * @param user
+     * Formulario principal del sistema InnovaLens Muestra el menú principal con
+     * las diferentes opciones del sistema y gestiona la navegación entre
+     * módulos.
      */
-    public fmrMenuPrincipal(UserDto user) {
+    public fmrMenuPrincipal(UserDto user) { //Constructor principal que recibe los datos del usuario
         initComponents();
         System.out.println("HOLA DESDE LA PRINCIPAL");
         initComponents();
@@ -28,6 +28,9 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Constructor alternativo (sin parámetros)
+     */
     public fmrMenuPrincipal() {
 
     }
@@ -246,13 +249,14 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btncancelarActionPerformed
 
+    // Evento del botón Ventas - abre formulario de ventas
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         // TODO add your handling code here:
         fmrVentas fr = new fmrVentas();
         fr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVentasActionPerformed
-
+    // Evento del botón Expedientes - abre formulario de gestión de expedientes
     private void btnExpedientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedientesActionPerformed
         // TODO add your handling code here:
 
@@ -260,7 +264,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         fr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnExpedientesActionPerformed
-
+    // Evento del botón Inventario - abre formulario de inventario
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         // TODO add your handling code here:
         fmrInventario fr = new fmrInventario();
@@ -274,9 +278,9 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-        
+        this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
-
+    // Evento del botón Usuarios - abre formulario de gestión de usuarios
     private void btnCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambioActionPerformed
         // TODO add your handling code here:
         fmrUsuarios fmr = new fmrUsuarios();
@@ -318,7 +322,7 @@ public class fmrMenuPrincipal extends javax.swing.JFrame {
         });
 
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
