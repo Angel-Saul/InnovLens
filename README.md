@@ -1,84 +1,114 @@
 # InnovLens
 
-**InnovaLens** es una aplicación de escritorio desarrollada en Java con arquitectura por capas, diseñada para gestionar eficientemente una óptica. El sistema permite el manejo completo de **expedientes de pacientes** y **inventario de productos**, utilizando operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en ambas funcionalidades.
 
-Este proyecto fue desarrollado con enfoque en modularidad, mantenibilidad y escalabilidad, siguiendo buenas prácticas de programación orientada a objetos y diseño por capas.
 
----
+# Introducción
 
-## 📌 Funcionalidades Principales
+Esta aplicación de escritorio está enfocada para el uso en una óptica local en Xicotepec, gracias a esta aplicación se podrá resolver el problema principal del negocio que es el registro de expedientes de clientes, ya que estos se realizan a mano lo cual es un proceso tardado, que ocasiona una pérdida de tiempo considerable en los clientes, dado a que el proceso se realiza a mano otro problema identificado es la pérdida de información ya que todos los registros están hechos en papel.
 
-- ✅ **Gestión de Expedientes Médicos**
-  - Registro completo del paciente (datos personales, historial visual, recetas, etc.)
-  - Búsqueda y edición de expedientes
-  - CRUD completo mediante interfaz gráfica
-
-- ✅ **Gestión de Inventario**
-  - Control de productos (lentes, monturas, accesorios)
-  - Registro de stock, precios y proveedores
-  - Actualización y eliminación segura de productos
-
-- ✅ **Interfaz Gráfica Amigable (Swing)**
-  - Menú principal intuitivo
-  - Formularios para creación y edición
-  - Navegación entre módulos
-
-- ✅ **Autenticación de Usuarios**
-  - Inicio de sesión seguro
-  - Gestión de usuarios y roles
-
-- ✅ **Base de Datos Relacional (MySQL)**
-  - Persistencia de datos mediante JDBC
-  - Conexión estable y configurada
+Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones básicas de un punto de venta donde se pueden realizar ventas y actualización de inventario, pero dando un plus a comparación de un punto de venta común ya que esta aplicación incorpora una función para la gestión de expedientes en el cual se podrá llevar a cabo el registro de clientes de una manera más rápida y eficiente, también se podrán actualizar datos de los clientes y asimismo la eliminación de expedientes de clientes que no son regulares.
 
 ---
 
-## 🏗️ Arquitectura por Capas
+# Diagrama de casos de uso
 
-El sistema sigue una arquitectura de **4 capas bien definidas**, separando responsabilidades para facilitar el mantenimiento y escalabilidad:
-
-### 🔹 Capa 1: **Vista (View)**  
-> Responsable de la interfaz gráfica del usuario.
-
-- Ubicación: `com.mycompany.innovalens.view`
-- Contiene todos los formularios (`frmLogin`, `frmExpedientes`, `frmInventario`, etc.)
-- Se encarga únicamente de mostrar información y capturar entradas del usuario.
-- No contiene lógica de negocio ni acceso directo a base de datos.
-
-### 🔹 Capa 2: **Conexión (Connection Layer)**  
-> Gestiona la comunicación con la base de datos.
-
-- Ubicación: `conexion`
-- Clase principal: `conexionDB.java`
-- Establece la conexión JDBC con MySQL.
-- Proporciona métodos para abrir/cerrar conexiones y manejar excepciones.
-
-### 🔹 Capa 3: **Acceso a Datos (DAO - Data Access Objects)**  
-> Maneja todas las operaciones CRUD con la base de datos.
-
-- Ubicación: `dao`
-- Clases: `expedienteDAO.java`, `productoDAO.java`, `usuariosDAO.java`, etc.
-- Cada DAO se encarga de una entidad específica.
-- Usa sentencias SQL y métodos para insertar, leer, actualizar y eliminar registros.
-- Actúa como puente entre la vista y la base de datos.
-
-### 🔹 Capa 4: **Transferencia de Datos (DTO - Data Transfer Objects)**  
-> Representa los objetos de datos que se intercambian entre capas.
-
-- Ubicación: `dto`
-- Clases: `UserDto.java`, `dtoExpediente.java`, `dtoProducto.java`, etc.
-- Son clases simples que contienen atributos y métodos getters/setters.
-- Permiten pasar datos de forma segura entre capas sin exponer la estructura interna.
+*(Imagen diagrama*
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+# Diagrama UML
 
-| Tecnología     | Descripción |
-|---------------|------------|
-| **Java SE 8+** | Lenguaje principal de desarrollo |
-| **Swing**      | Interfaz gráfica de usuario |
-| **MySQL**      | Base de datos relacional |
-| **JDBC**       | Conexión entre Java y MySQL |
-| **NetBeans / Eclipse** | IDE utilizado para desarrollo |
-| **MVC (estilo)** | Patrón de diseño aplicado mediante capas |
+*(Imagen del diagrama UML)*
+
+---
+
+# Requisitos del sistema
+
+- Java JDK 24 (versión estable)
+- Compatible con Windows, Linux y macOS
+- Entorno de desarrollo: NetBeans, IntelliJ IDEA o IDE similar con soporte para Java
+- Motor de base de datos: MySQL
+
+---
+
+# Método de instalación
+
+1. Clona el repositorio del proyecto.
+2. Abre el proyecto en tu IDE (IntelliJ, NetBeans, etc.).
+3. Configura la conexión a la base de datos (edita el archivo de configuración o código con tus credenciales de MySQL: usuario, contraseña y nombre de la BD).
+4. Ejecuta el archivo principal (`Login.java`).
+5. Listo: La aplicación mostrará la ventana de inicio de sesión.
+
+---
+
+# Inicio de sesión
+
+1. **Pantalla de inicio:** Al ejecutar la aplicación, se mostrará la interfaz de login.  
+2. **Credenciales:**  
+   - Ingrese el usuario y contraseña que se proporcionará por defecto.  
+   - Datos de prueba: Usuario: `admin` / Contraseña: `1234`.  
+3. **Acceso:**  
+   - Si los datos son correctos, el sistema redirigirá al menú principal.  
+   - Si son incorrectos, se mostrará un mensaje de error, hasta que se ingresen los datos correctos.
+
+---
+
+# Funciones del sistema
+
+## Menú principal
+
+En el menú principal encontraremos un menú lateral para poder navegar a través de las funciones del sistema.
+
+---
+
+## Formulario de Ventas
+
+1. En este formulario será donde se podrán realizar las operaciones de venta de productos o servicios.
+2. Se ingresa el id del producto o del servicio.
+3. Una vez ingresado se presiona el botón de **Agregar** y se irán acumulando en la tabla.
+4. Para eliminar un producto de la tabla se seleccionará y se presiona el botón de eliminar.
+5. Para la consulta de algún producto en específico de la lista solo se deberá presionar el botón de búsqueda.
+
+---
+
+## Formulario de Inventario
+
+1. En el formulario de inventario se encuentran 3 acciones: agregar, editar y eliminar.
+2. Cuando se presiona **Agregar**, se abrirá otra interfaz donde se podrán introducir los datos necesarios para poder crear un nuevo producto.
+3. Cuando se presiona el botón de **Editar**, de igual manera se abrirá una interfaz nueva. Para poder hacerlo se deberá seleccionar un producto de la tabla, una vez hecho se podrá actualizar el producto.
+4. Para poder **eliminar** un producto se deberá seleccionar y presionar el botón de eliminar.
+
+---
+
+## Formulario de Usuarios
+
+En este formulario se podrán gestionar los usuarios que pueden hacer uso del programa.
+
+---
+
+## Formulario de gestión de expedientes
+
+1. En este formulario encontraremos una interfaz con una funcionalidad parecida a la de inventario, donde se podrán crear, editar y eliminar expedientes.
+2. Una vez presionado el botón de **Nuevo registro**, este nos llevará a una nueva interfaz donde se ingresan los datos correspondientes.
+3. Para poder **editar** un registro se debe seleccionar previamente, luego presionar el botón de editar el cual nos llevará a otra interfaz donde se harán las correcciones.
+4. Para **eliminar** un registro se debe seleccionar y presionar el botón de eliminar.
+5. Para poder **buscar un expediente** y saber sus detalles se debe ingresar en el cuadro de texto que se encuentra debajo del logo (nombre, id o historial del cliente) y presionar el botón de búsqueda.
+
+---
+
+## Salir del programa
+
+1. Esta acción se puede realizar de 2 maneras:
+   - Presionando el botón de **Salir** que se encuentra en el menú lateral de cada interfaz de funciones.  
+   - Presionando la **X** que se encuentra en la esquina superior derecha.  
+
+---
+
+# Equipo de desarrollo
+
+- Angel Saul Barrios Martínez
+- José María Castillo Aparicio
+- Jonhy Neri Hernández
+- Obed Vargas Luna
+
+
