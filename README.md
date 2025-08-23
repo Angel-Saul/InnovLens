@@ -49,7 +49,7 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 3. **Acceso:**  
    - Si los datos son correctos, el sistema redirigirá al menú principal.  
    - Si son incorrectos, se mostrará un mensaje de error, hasta que se ingresen los datos correctos.
-
+![Login](assets/log.jpeg)
 ---
 
 # Funciones del sistema
@@ -57,7 +57,7 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 ## Menú principal
 
 En el menú principal encontraremos un menú lateral para poder navegar a través de las funciones del sistema.
-
+![Menu principal](assets/main.jpeg)
 ---
 
 ## Formulario de Ventas
