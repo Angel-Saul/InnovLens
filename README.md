@@ -17,8 +17,7 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 ---
 
 # Diagrama UML
-
-*(Imagen del diagrama UML)*
+![Diagrama UML](assets/Diagramauml.jpeg)
 
 ---
 
