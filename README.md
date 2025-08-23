@@ -49,7 +49,8 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 3. **Acceso:**  
    - Si los datos son correctos, el sistema redirigirá al menú principal.  
    - Si son incorrectos, se mostrará un mensaje de error, hasta que se ingresen los datos correctos.
-![Login](assets/log.jpeg)
+![Login](assets/login.png)
+
 ---
 
 # Funciones del sistema
@@ -57,7 +58,8 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 ## Menú principal
 
 En el menú principal encontraremos un menú lateral para poder navegar a través de las funciones del sistema.
-![Menu principal](assets/main.jpeg)
+![Menu Principal](assets/log.jpeg)
+
 ---
 
 ## Formulario de Ventas
@@ -67,7 +69,7 @@ En el menú principal encontraremos un menú lateral para poder navegar a travé
 3. Una vez ingresado se presiona el botón de **Agregar** y se irán acumulando en la tabla.
 4. Para eliminar un producto de la tabla se seleccionará y se presiona el botón de eliminar.
 5. Para la consulta de algún producto en específico de la lista solo se deberá presionar el botón de búsqueda.
-
+![Ventas](assets/ventas.png)
 ---
 
 ## Formulario de Inventario
@@ -76,13 +78,13 @@ En el menú principal encontraremos un menú lateral para poder navegar a travé
 2. Cuando se presiona **Agregar**, se abrirá otra interfaz donde se podrán introducir los datos necesarios para poder crear un nuevo producto.
 3. Cuando se presiona el botón de **Editar**, de igual manera se abrirá una interfaz nueva. Para poder hacerlo se deberá seleccionar un producto de la tabla, una vez hecho se podrá actualizar el producto.
 4. Para poder **eliminar** un producto se deberá seleccionar y presionar el botón de eliminar.
-
+![Inventario](assets/inventario.jpeg)
 ---
 
 ## Formulario de Usuarios
 
 En este formulario se podrán gestionar los usuarios que pueden hacer uso del programa.
-
+![Usuarios](assets/usuarios.jpeg)
 ---
 
 ## Formulario de gestión de expedientes
@@ -92,7 +94,7 @@ En este formulario se podrán gestionar los usuarios que pueden hacer uso del pr
 3. Para poder **editar** un registro se debe seleccionar previamente, luego presionar el botón de editar el cual nos llevará a otra interfaz donde se harán las correcciones.
 4. Para **eliminar** un registro se debe seleccionar y presionar el botón de eliminar.
 5. Para poder **buscar un expediente** y saber sus detalles se debe ingresar en el cuadro de texto que se encuentra debajo del logo (nombre, id o historial del cliente) y presionar el botón de búsqueda.
-
+![Expedientes](assets/expedientes.jpeg)
 ---
 
 ## Salir del programa
