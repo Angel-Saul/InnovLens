@@ -12,7 +12,7 @@ Esta aplicación resuelve esos problemas, gracias a que cuenta con las funciones
 
 # Diagrama de casos de uso
 
-![Diagrama casos de uso](assets/casososdeuso.jpeg)
+![Diagrama casos de uso](assets/casosdeuso.jpeg)
 
 ---
 
